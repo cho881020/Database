@@ -98,6 +98,24 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+//        queryBtn01.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                contentEdt.setText("");
+//
+//                Cursor c = mDBManager.getQuery00();
+//
+//                if (c != null) {
+//                    while (c.moveToNext()) {
+//                        String name = c.getString(0);
+//                        contentEdt.append(name+"\n");
+//                    }
+//                }
+//
+//            }
+//        });
+
     }
 
     @Override

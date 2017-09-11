@@ -73,4 +73,14 @@ public class StudentDBManager {
 
     }
 
+//    영문과 4학년 학생의 이름? 쿼리
+
+//    메쏘드명 : 0번문제의 쿼리
+    public Cursor getQuery00() {
+
+        return mDB.rawQuery("SELECT name FROM " + TABLE_STUDENT +
+                " WHERE department='영문' AND grade = 4;", null);
+
+    }
+
 }
