@@ -98,23 +98,80 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-//        queryBtn01.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                contentEdt.setText("");
-//
-//                Cursor c = mDBManager.getQuery00();
-//
-//                if (c != null) {
-//                    while (c.moveToNext()) {
-//                        String name = c.getString(0);
-//                        contentEdt.append(name+"\n");
-//                    }
-//                }
-//
-//            }
-//        });
+        queryBtn01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                contentEdt.setText("");
+
+                Cursor c = mDBManager.getQuery01();
+
+                if (c != null) {
+                    while (c.moveToNext()) {
+                        String department = c.getString(0);
+                        contentEdt.append(department+"\n");
+                    }
+                }
+
+            }
+        });
+
+        queryBtn02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                contentEdt.setText("");
+
+                Cursor c = mDBManager.getQuery02();
+
+                if (c != null) {
+                    while (c.moveToNext()) {
+                        String name = c.getString(0);
+                        String department = c.getString(1);
+                        contentEdt.append(name + " : " + department+"\n");
+                    }
+                }
+
+            }
+        });
+
+
+        queryBtn03.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                contentEdt.setText("");
+
+                Cursor c = mDBManager.getQuery03();
+
+                if (c != null) {
+                    while (c.moveToNext()) {
+                        String name = c.getString(0);
+                        int grade = c.getInt(1);
+                        contentEdt.append(name + " : " + grade+"\n");
+                    }
+                }
+
+            }
+        });
+
+        queryBtn04.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                contentEdt.setText("");
+
+                Cursor c = mDBManager.getQuery05();
+
+                if (c != null) {
+                    while (c.moveToNext()) {
+                        String stdNum = c.getString(0);
+                        contentEdt.append(stdNum+"\n");
+                    }
+                }
+
+            }
+        });
 
     }
 

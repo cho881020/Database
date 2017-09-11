@@ -83,4 +83,32 @@ public class StudentDBManager {
 
     }
 
+    public Cursor getQuery01() {
+
+        return mDB.rawQuery("SELECT department FROM " + TABLE_STUDENT +
+                " WHERE name='박석영';", null);
+
+    }
+
+    public Cursor getQuery02() {
+
+        return mDB.rawQuery("SELECT name, department FROM " + TABLE_STUDENT +
+                " WHERE grade = 1;", null);
+
+    }
+
+    public Cursor getQuery03() {
+
+        return mDB.rawQuery("SELECT name, grade FROM " + TABLE_STUDENT +
+                " WHERE department='기계';", null);
+
+    }
+
+    public Cursor getQuery05() {
+
+        return mDB.rawQuery("SELECT stdNum FROM " + TABLE_STUDENT +
+                " WHERE grade = 2;", null);
+
+    }
+
 }
