@@ -21,6 +21,14 @@ public class StudentDBManager {
     private static StudentDBManager mDbManager = null;
     private SQLiteDatabase mDB = null;
 
+    public static StudentDBManager getInstance(Context context) {
+        if (mDbManager == null) {
+            mDbManager = new StudentDBManager(context);
+        }
+
+        return mDbManager;
+    }
+
     private StudentDBManager(Context context) {
         mContext = context;
 
