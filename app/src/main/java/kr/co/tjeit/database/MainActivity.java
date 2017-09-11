@@ -21,6 +21,10 @@ public class MainActivity extends BaseActivity {
     private android.widget.EditText contentEdt;
 
     public StudentDBManager mDBManager;
+    private EditText stdNumEdt;
+    private EditText nameEdt;
+    private EditText departmentEdt;
+    private EditText gradeEdt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +45,14 @@ public class MainActivity extends BaseActivity {
 //                ContentValues를 다루는 법 : HashMap과 거의 동일.
 //                키 / 값
                 ContentValues cv = new ContentValues();
-                cv.put("stdNum", "2010");
-                cv.put("name", "고동윤");
-                cv.put("department", "전기");
-                cv.put("grade", 3);
+                cv.put("stdNum", stdNumEdt.getText().toString());
+                cv.put("name", nameEdt.getText().toString());
+                cv.put("department", departmentEdt.getText().toString());
+                cv.put("grade", Integer.parseInt(gradeEdt.getText().toString()));
 
                 long insertedRowId = mDBManager.insert(cv);
 
-                Toast.makeText(mContext, "학생 추가 : "+insertedRowId, Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "학생 추가 : " + insertedRowId, Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -94,11 +98,14 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void bindViews() {
-
         this.contentEdt = (EditText) findViewById(R.id.contentEdt);
         this.queryBtn = (Button) findViewById(R.id.queryBtn);
         this.deleteBtn = (Button) findViewById(R.id.deleteBtn);
         this.updateBtn = (Button) findViewById(R.id.updateBtn);
         this.insertBtn = (Button) findViewById(R.id.insertBtn);
+        this.gradeEdt = (EditText) findViewById(R.id.gradeEdt);
+        this.departmentEdt = (EditText) findViewById(R.id.departmentEdt);
+        this.nameEdt = (EditText) findViewById(R.id.nameEdt);
+        this.stdNumEdt = (EditText) findViewById(R.id.stdNumEdt);
     }
 }
