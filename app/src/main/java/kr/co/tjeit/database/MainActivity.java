@@ -1,8 +1,11 @@
 package kr.co.tjeit.database;
 
+import android.content.ContentValues;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import kr.co.tjeit.database.util.StudentDBManager;
 
@@ -29,7 +32,23 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void setupEvents() {
+        insertBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                ContentValues를 다루는 법 : HashMap과 거의 동일.
+//                키 / 값
+                ContentValues cv = new ContentValues();
+                cv.put("stdNum", "2010");
+                cv.put("name", "고동윤");
+                cv.put("department", "전기");
+                cv.put("grade", 3);
 
+                long insertedRowId = mDBManager.insert(cv);
+
+                Toast.makeText(mContext, "학생 추가 : "+insertedRowId, Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 
     @Override

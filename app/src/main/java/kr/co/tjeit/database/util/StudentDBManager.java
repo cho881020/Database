@@ -1,5 +1,6 @@
 package kr.co.tjeit.database.util;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -53,6 +54,10 @@ public class StudentDBManager {
                     "department TEXT, " +
                     "grade INTEGER" +
                     ");");
+    }
+
+    public long insert(ContentValues addRowValue) {
+        return mDB.insert(TABLE_STUDENT, null, addRowValue);
     }
 
 }
