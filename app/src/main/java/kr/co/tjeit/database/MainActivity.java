@@ -54,6 +54,11 @@ public class MainActivity extends BaseActivity {
 
                 Toast.makeText(mContext, "학생 추가 : " + insertedRowId, Toast.LENGTH_SHORT).show();
 
+                stdNumEdt.setText("");
+                nameEdt.setText("");
+                departmentEdt.setText("");
+                gradeEdt.setText("");
+
             }
         });
 
