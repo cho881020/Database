@@ -89,6 +89,43 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/queryBtn01"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1번문제" />
+
+        <Button
+            android:id="@+id/queryBtn02"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2번문제" />
+
+        <Button
+            android:id="@+id/queryBtn03"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3번문제" />
+
+        <Button
+            android:id="@+id/queryBtn04"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="4번문제" />
+
+
+    </LinearLayout>
+
+
     <EditText
         android:id="@+id/contentEdt"
         android:layout_width="match_parent"

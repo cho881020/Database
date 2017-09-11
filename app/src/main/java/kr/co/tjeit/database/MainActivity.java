@@ -25,6 +25,10 @@ public class MainActivity extends BaseActivity {
     private EditText nameEdt;
     private EditText departmentEdt;
     private EditText gradeEdt;
+    private Button queryBtn01;
+    private Button queryBtn02;
+    private Button queryBtn03;
+    private Button queryBtn04;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,6 +108,10 @@ public class MainActivity extends BaseActivity {
     @Override
     public void bindViews() {
         this.contentEdt = (EditText) findViewById(R.id.contentEdt);
+        this.queryBtn04 = (Button) findViewById(R.id.queryBtn04);
+        this.queryBtn03 = (Button) findViewById(R.id.queryBtn03);
+        this.queryBtn02 = (Button) findViewById(R.id.queryBtn02);
+        this.queryBtn01 = (Button) findViewById(R.id.queryBtn01);
         this.queryBtn = (Button) findViewById(R.id.queryBtn);
         this.deleteBtn = (Button) findViewById(R.id.deleteBtn);
         this.updateBtn = (Button) findViewById(R.id.updateBtn);
