@@ -2,6 +2,7 @@ package kr.co.tjeit.database.util;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
@@ -58,6 +59,18 @@ public class StudentDBManager {
 
     public long insert(ContentValues addRowValue) {
         return mDB.insert(TABLE_STUDENT, null, addRowValue);
+    }
+
+    public Cursor query(String[] columns,
+                        String selection,
+                        String[] selectionArgs,
+                        String groupBy,
+                        String having,
+                        String orderBy) {
+
+        return mDB.query(TABLE_STUDENT,
+                columns, selection, selectionArgs, groupBy, having, orderBy);
+
     }
 
 }

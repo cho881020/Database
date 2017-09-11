@@ -1,11 +1,14 @@
 package kr.co.tjeit.database;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.Locale;
 
 import kr.co.tjeit.database.util.StudentDBManager;
 
@@ -49,6 +52,39 @@ public class MainActivity extends BaseActivity {
 
             }
         });
+
+        queryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                필요한 데이터를 받아다가 출력.
+
+                String[] columns = {"id", "stdNum", "name", "department", "grade"};
+
+                Cursor c = mDBManager.query(columns, null, null, null, null, null);
+
+                if (c != null) {
+//                    글자 초기화
+                    contentEdt.setText("");
+
+                    while (c.moveToNext()) {
+                        int id = c.getInt(0);
+                        String stdNum = c.getString(1);
+                        String name = c.getString(2);
+                        String department = c.getString(3);
+                        int grade = c.getInt(4);
+
+//                        append : 이어붙이기.
+                        contentEdt.append(String.format(Locale.KOREA,
+                                "%s : %d, %s, %s, %d\n==================\n",
+                                name, id, department, stdNum, grade));
+
+                    }
+
+                }
+
+            }
+        });
+
     }
 
     @Override
